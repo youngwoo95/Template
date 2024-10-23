@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ZEuJMLYe/QO2y9VIf/Y/NvSt7N+QMlSyfvS5zMHc9U0IYN4u8QcD6KLYgHm1negNGdf4LgSkUXSeTqZ7kaxoQ==",
+  "dgSpecHash": "kqMamBjA0GcQiHjC9o6IDLD01lNy9XgKCrIdpf4m2tVui84f910GZp9p3NgOtDDrp1rlJbzh8k3pmHSvIE/1Og==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kyw\\Documents\\BlazorStudy\\BlazorWS\\BlazorAppTestWasm2\\MDMSender\\MDMSender\\MDMSender.csproj",
+  "projectFilePath": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\MDMSender.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

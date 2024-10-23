@@ -4,17 +4,17 @@
 exe
 C#
 .cs
-C:\Users\kyw\Documents\BlazorStudy\BlazorWS\BlazorAppTestWasm2\MDMSender\MDMSender\obj\Debug\net8.0-windows\
+C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\
 MDMSender
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\kyw\Documents\BlazorStudy\BlazorWS\BlazorAppTestWasm2\MDMSender\MDMSender\App.xaml
+C:\Users\kyw\Documents\Template\MDMSender\App.xaml
 31286377048
 
 82138245937
 1981451641563
 MainWindow.xaml;SettingWindow.xaml;StartWindow.xaml;
 
-False
+True
 
