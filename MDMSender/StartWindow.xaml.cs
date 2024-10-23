@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MDMSender.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace MDMSender
         public StartWindow()
         {
             InitializeComponent();
+
+           
+            
+
+            MyListView.ItemsSource = CommonModel.lstModel;
         }
+
+
     }
 }

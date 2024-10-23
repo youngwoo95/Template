@@ -7,6 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="BlanchedAlmond">
-        <TextBlock Text="Start View" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White"/>
+        <ListView x:Name="MyListView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <!-- 첫 번째 열 (고정 너비) -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- 두 번째 열 (남은 공간 차지) -->
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding DateTime}" Grid.Column="0" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding Query}" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>
