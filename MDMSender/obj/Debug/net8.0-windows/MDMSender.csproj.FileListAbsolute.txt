@@ -23,3 +23,8 @@ C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\refint\MDMSen
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.pdb
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.genruntimeconfig.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\ref\MDMSender.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\run_ico.ico
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Start_ICO.ico
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Stec_Logo.png
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Stop_ICO.ico
+C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender_Content.g.cs

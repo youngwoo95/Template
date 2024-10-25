@@ -16,10 +16,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Resource Include="Images\run_ico.ico" CopyToOutputDirectory="PreserveNewest" />
-		<Resource Include="Images\Start_ICO.ico" CopyToOutputDirectory="PreserveNewest" />
-		<Resource Include="Images\Stec_Logo.png" CopyToOutputDirectory="PreserveNewest" />
-		<Resource Include="Images\Stop_ICO.ico" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="Images\run_ico.ico" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="Images\Start_ICO.ico" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="Images\Stec_Logo.png" CopyToOutputDirectory="PreserveNewest" />
+		<Content Include="Images\Stop_ICO.ico" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 
 </Project>

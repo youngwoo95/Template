@@ -1,6 +1,7 @@
 ﻿using MDMSender.Functions;
 using MDMSender.Models;
 using MDMSender.Services;
+using System.IO;
 using System.Windows;
 
 namespace MDMSender
@@ -10,8 +11,8 @@ namespace MDMSender
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool isRunning = false;   // 타이머 실행 여부
-        private Task? timerTask = null;     // 현재 실행 중인 타이머 작업
+        private bool isRunning = false; // 타이머 실행 여부
+        private Task? timerTask = null; // 현재 실행 중인 타이머 작업
 
         private NotifyIcon? notifyIcon;
 
@@ -31,11 +32,12 @@ namespace MDMSender
         {
             try
             {
+                
                 notifyIcon = new NotifyIcon
                 {
-                    Icon = new Icon(SystemIcons.Information, 40, 40),
+                    Icon = new Icon(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Images\run_ico.ico")),
                     Visible = true,
-                    Text = "MDMSender - Running in Background"
+                    Text = "MDMSender_V02"
                 };
 
                 notifyIcon.ContextMenuStrip = new ContextMenuStrip();
@@ -73,8 +75,8 @@ namespace MDMSender
                 this.Hide();
 
                 // 트레이 아이콘을 업데이트하여 알림 표시 시 문제 해결
-                notifyIcon!.Icon = SystemIcons.Warning; // 임시 아이콘 설정
-                notifyIcon!.Icon = SystemIcons.Information; // 원래 아이콘 복구
+                //notifyIcon!.Icon = SystemIcons.Info; // 임시 아이콘 설정
+                notifyIcon!.Icon = new Icon(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Images\run_ico.ico")); // 원래 아이콘 복구
 
                 notifyIcon!.BalloonTipTitle = "프로그램 알림";
                 notifyIcon!.BalloonTipText = "프로그램이 백그라운드에서 동작중입니다.";
@@ -172,11 +174,13 @@ namespace MDMSender
         /// </summary>
         private async Task DoWorkAsync()
         {
+            // 비동기 작업이 되어야 할곳.
             await Task.Run(() =>
             {
                 Console.WriteLine("1초 경과됨: " + DateTime.Now);
             });
 
+            // UI에 반영해야하는것들은 여기서.
             await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
             {
                 await MDMFunctions.AddDataAsync(new SenderModel { DateTime = "1", Query = "A" });
