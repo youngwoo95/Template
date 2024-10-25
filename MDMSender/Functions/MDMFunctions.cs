@@ -13,7 +13,7 @@ namespace MDMSender.Functions
         public static async Task AddDataAsync(SenderModel newItem)
         {
             // UI 스레드에서 안전하게 데이터 추가
-            await Application.Current.Dispatcher.InvokeAsync(() =>
+            await System.Windows.Application.Current.Dispatcher.InvokeAsync(() =>
             {
                 if (CommonModel.lstModel.Count >= 20)
                 {

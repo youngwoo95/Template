@@ -6,10 +6,11 @@
         Width="1000"
         MinWidth="1000"
         MinHeight="600"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        StateChanged="Window_StateChanged"
+        Closing="Window_Closing">
 
     <Window.Resources>
-
         <!-- 재사용 가능한 ControlTemplate 정의 -->
         <ControlTemplate x:Key="AnimatedButtonTemplate" TargetType="Button">
             <Border x:Name="Border" Background="{TemplateBinding Background}"
