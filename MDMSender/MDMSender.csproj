@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
 	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
+		<OutputType>Exe</OutputType>
 		<!-- WPF 창 애플리케이션 실행 -->
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<!-- Windows 플랫폼 지정 -->
@@ -16,10 +16,34 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Fonts\D2Coding-Ver1.3.2-20180524-all.ttc" />
+	  <None Remove="Fonts\NanumBarunGothic-YetHangul.otf" />
+	  <None Remove="Fonts\NanumGothicEco.otf" />
+	  <None Remove="Fonts\NanumSquareEB.otf" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<Content Include="Images\run_ico.ico" CopyToOutputDirectory="PreserveNewest" />
 		<Content Include="Images\Start_ICO.ico" CopyToOutputDirectory="PreserveNewest" />
 		<Content Include="Images\Stec_Logo.png" CopyToOutputDirectory="PreserveNewest" />
 		<Content Include="Images\Stop_ICO.ico" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Fonts\D2Coding-Ver1.3.2-20180524-all.ttc" />
+	  <Resource Include="Fonts\NanumBarunGothic-YetHangul.otf" />
+	  <Resource Include="Fonts\NanumGothicEco.otf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Fonts\NanumSquareEB.otf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
 
 </Project>

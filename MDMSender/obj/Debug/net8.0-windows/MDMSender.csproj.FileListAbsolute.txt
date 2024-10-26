@@ -1,3 +1,7 @@
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\run_ico.ico
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Start_ICO.ico
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Stec_Logo.png
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Stop_ICO.ico
 C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\MDMSender.exe
 C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\MDMSender.deps.json
 C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\MDMSender.runtimeconfig.json
@@ -8,6 +12,7 @@ C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MainWindow.g.
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\SettingWindow.g.cs
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\StartWindow.g.cs
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender_Content.g.cs
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender_MarkupCompile.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender_MarkupCompile.lref
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\SettingWindow.baml
@@ -23,8 +28,8 @@ C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\refint\MDMSen
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.pdb
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.genruntimeconfig.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\ref\MDMSender.dll
-C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\run_ico.ico
-C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Start_ICO.ico
-C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Stec_Logo.png
-C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Images\Stop_ICO.ico
-C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender_Content.g.cs
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\LiveCharts.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
+C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.csproj.AssemblyReference.cache
+C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.csproj.Up2Date
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Newtonsoft.Json.dll

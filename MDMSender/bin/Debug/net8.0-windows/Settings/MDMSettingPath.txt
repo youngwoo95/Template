@@ -1,0 +1,8 @@
+{
+  "DBIpAddress": "127.0.0.1",
+  "DBPort": "3306",
+  "DBUser": "root",
+  "DBPW": "rladyddn!!95",
+  "DBName": "5",
+  "Destination": "6"
+}

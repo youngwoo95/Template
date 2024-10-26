@@ -20,7 +20,6 @@ namespace MDMSender.Services
                     // 년도 디렉터리 생성
                     string DirectoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SystemLog", ThisDay.Year.ToString());
 
-
                     DirectoryInfo di = new DirectoryInfo(DirectoryPath);
 
                     if (!di.Exists)
@@ -43,8 +42,8 @@ namespace MDMSender.Services
                     // 없으면 생성
                     using (StreamWriter sw = new StreamWriter(FilePath, true))
                     {
-                        System.Diagnostics.StackTrace objStactTrace = new System.Diagnostics.StackTrace(new System.Diagnostics.StackFrame(1));
-                        var s = objStactTrace.ToString();
+                        System.Diagnostics.StackTrace objStackTrace = new System.Diagnostics.StackTrace(new System.Diagnostics.StackFrame(1));
+                        var s = objStackTrace.ToString();
                         await sw.WriteLineAsync($"[{ThisDay.ToString("yyyy-MM-dd HH:mm:ss")}]\t{Message}");
                     }
 

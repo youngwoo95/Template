@@ -12,6 +12,7 @@ namespace MDMSender
             InitializeComponent();
 
             MyListView.ItemsSource = CommonModel.lstModel;
+            
         }
 
 

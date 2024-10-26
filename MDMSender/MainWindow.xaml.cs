@@ -1,6 +1,8 @@
 ﻿using MDMSender.Functions;
 using MDMSender.Models;
 using MDMSender.Services;
+using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 
@@ -16,6 +18,8 @@ namespace MDMSender
 
         private NotifyIcon? notifyIcon;
 
+        Stopwatch stopwatch = new Stopwatch();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,6 +29,28 @@ namespace MDMSender
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             RightStackPanel.Content = new StartWindow();
+
+            // 설정파일 읽기
+            string settingPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings", "MDMSettingPath.txt");
+            if (File.Exists(settingPath))
+            {
+                // JSON 파일 읽기 및 역직렬화
+                string? json = File.ReadAllText(settingPath);
+                JObject JsonParse = JObject.Parse(json);
+
+                Settings.DBIpAddress = JsonParse["DBIpAddress"]?.ToString() ?? String.Empty;
+                Settings.DBPort = JsonParse["DBPort"]?.ToString() ?? String.Empty;
+                Settings.DBUser = JsonParse["DBUser"]?.ToString() ?? String.Empty;
+                Settings.DBPW = JsonParse["DBPW"]?.ToString() ?? String.Empty;
+                Settings.DBName = JsonParse["DBName"]?.ToString() ?? String.Empty;
+                Settings.Destination = JsonParse["Destination"]?.ToString() ?? String.Empty;
+
+            }
+            else
+            {
+                Console.WriteLine("JSON 파일이 존재하지 않습니다.");
+            }
+
             LogService.LogMessage("프로그램 시작.");
         }
 
@@ -32,7 +58,6 @@ namespace MDMSender
         {
             try
             {
-                
                 notifyIcon = new NotifyIcon
                 {
                     Icon = new Icon(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Images\run_ico.ico")),
@@ -48,7 +73,7 @@ namespace MDMSender
             }
             catch(Exception ex)
             {
-                LogService.LogMessage("MDMSender가 시작되었습니다.");
+                LogService.LogMessage(ex.ToString());
             }
         }
 
@@ -90,7 +115,6 @@ namespace MDMSender
             if (WindowState == WindowState.Minimized)
             {
                 this.Hide(); // 창 숨기기 (트레이 아이콘만 남김)
-                
             }
         }
 
@@ -98,33 +122,68 @@ namespace MDMSender
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             notifyIcon!.Dispose(); // 리소스 정리
+            System.Windows.Application.Current.Shutdown();
         }
 
         private async void btnSetting_Click(object sender, RoutedEventArgs e)
         {
-            if (isRunning)
+            try
             {
-                await StopTimerAsync(); // 비동기적으로 타이머 중지
-            }
+                if (isRunning)
+                {
+                    // 타이머 중지
+                    stopwatch.Stop();
+                    TimeSpan TimeDate = stopwatch.Elapsed;
+                    CommonModel.RunTime = $"{TimeDate.Days}일 {TimeDate.Hours}시간 {TimeDate.Minutes}분 {TimeDate.Seconds}초";
+                    await StopTimerAsync(); // 비동기적으로 타이머 중지
+                }
 
-            RightStackPanel.Content = new SettingWindow();
+                await LogService.LogMessage("설정화면 진입");
+                RightStackPanel.Content = new SettingWindow();
+            }
+            catch(Exception ex)
+            {
+                await LogService.LogMessage(ex.ToString());
+            }
         }
 
 
         private async void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            RightStackPanel.Content = new StartWindow();
-
-            if (!isRunning && (timerTask == null || timerTask.IsCompleted))
+            try
             {
-                await StartTimerAsync();
+                RightStackPanel.Content = new StartWindow();
+
+                if (!isRunning && (timerTask == null || timerTask.IsCompleted))
+                {
+                    await LogService.LogMessage("MDM SENDER 시작");
+
+                    stopwatch.Start();
+
+                    await StartTimerAsync();
+                }
+            }catch(Exception ex)
+            {
+                await LogService.LogMessage(ex.ToString());
             }
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            RightStackPanel.Content = new StartWindow();
         }
 
         private async void btnStop_Click(object sender, RoutedEventArgs e)
         {
             if (isRunning)
             {
+                await LogService.LogMessage("MDM SENDER 종료");
+
+                // 타이머 중지
+                stopwatch.Stop();
+                TimeSpan TimeDate = stopwatch.Elapsed;
+                CommonModel.RunTime = $"{TimeDate.Days}일 {TimeDate.Hours}시간 {TimeDate.Minutes}분 {TimeDate.Seconds}초";
+
                 await StopTimerAsync(); // 비동기적으로 타이머 중지
             }
         }
@@ -187,5 +246,6 @@ namespace MDMSender
             });
         }
 
+     
     }
 }
