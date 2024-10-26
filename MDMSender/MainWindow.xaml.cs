@@ -2,6 +2,7 @@
 using MDMSender.Models;
 using MDMSender.Services;
 using Newtonsoft.Json.Linq;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -19,6 +20,10 @@ namespace MDMSender
         private NotifyIcon? notifyIcon;
 
         Stopwatch stopwatch = new Stopwatch();
+        
+        // FORM_1
+        StartWindow? StartForm;
+
 
         public MainWindow()
         {
@@ -28,30 +33,9 @@ namespace MDMSender
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            RightStackPanel.Content = new StartWindow();
-
-            // 설정파일 읽기
-            string settingPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings", "MDMSettingPath.txt");
-            if (File.Exists(settingPath))
-            {
-                // JSON 파일 읽기 및 역직렬화
-                string? json = File.ReadAllText(settingPath);
-                JObject JsonParse = JObject.Parse(json);
-
-                Settings.DBIpAddress = JsonParse["DBIpAddress"]?.ToString() ?? String.Empty;
-                Settings.DBPort = JsonParse["DBPort"]?.ToString() ?? String.Empty;
-                Settings.DBUser = JsonParse["DBUser"]?.ToString() ?? String.Empty;
-                Settings.DBPW = JsonParse["DBPW"]?.ToString() ?? String.Empty;
-                Settings.DBName = JsonParse["DBName"]?.ToString() ?? String.Empty;
-                Settings.Destination = JsonParse["Destination"]?.ToString() ?? String.Empty;
-
-            }
-            else
-            {
-                Console.WriteLine("JSON 파일이 존재하지 않습니다.");
-            }
-
-            LogService.LogMessage("프로그램 시작.");
+            //RightStackPanel.Content = new StartWindow();
+            StartForm = new StartWindow();
+            RightStackPanel.Content = StartForm;
         }
 
         private void InitializeTrayIcon()
@@ -152,17 +136,33 @@ namespace MDMSender
         {
             try
             {
-                RightStackPanel.Content = new StartWindow();
+                //RightStackPanel.Content = new StartWindow();
+                RightStackPanel.Content = StartForm;
 
                 if (!isRunning && (timerTask == null || timerTask.IsCompleted))
                 {
+                    bool isLoad = await StartForm!.LoadSettingFiles();
+                    if (!isLoad)
+                    {
+                        System.Windows.MessageBox.Show("DB 연결파일이 없습니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
+                    bool isDBConnection = await StartForm.DBConnection();
+                    if(!isDBConnection)
+                    {
+                        System.Windows.MessageBox.Show("DB에 연결할 수 없습니다.", "알림", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+                    
                     await LogService.LogMessage("MDM SENDER 시작");
 
                     stopwatch.Start();
 
                     await StartTimerAsync();
                 }
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 await LogService.LogMessage(ex.ToString());
             }
@@ -170,7 +170,9 @@ namespace MDMSender
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
-            RightStackPanel.Content = new StartWindow();
+            //RightStackPanel.Content = new StartWindow();
+            RightStackPanel.Content = StartForm;
+            
         }
 
         private async void btnStop_Click(object sender, RoutedEventArgs e)
@@ -187,26 +189,48 @@ namespace MDMSender
                 await StopTimerAsync(); // 비동기적으로 타이머 중지
             }
         }
-
+        
+        private CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         /// <summary>
         /// 비동기 타이머 시작 메서드
         /// </summary>
         private async Task StartTimerAsync()
         {
-            if (!isRunning)
+            try
             {
-                isRunning = true; // 타이머 실행 중 플래그 설정
-                timerTask = Task.Run(async () =>
+                if (!isRunning)
                 {
-                    System.Windows.MessageBox.Show("MDM 프로그램 시작.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
-                    while (isRunning)
-                    {
-                        await DoWorkAsync(); // 1초마다 작업 수행
-                        await Task.Delay(TimeSpan.FromSeconds(1)); // 1초 대기 (비동기)
-                    }
-                });
+                    isRunning = true; // 타이머 실행 중 플래그 설정
+                    cancellationTokenSource = new CancellationTokenSource(); // 새로운 토큰 생성
 
-                await timerTask; // 타이머 작업이 완료될 때까지 대기
+                    try
+                    {
+                        timerTask = Task.Run(async () =>
+                        {
+                            System.Windows.MessageBox.Show("MDM 프로그램 시작.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                            while (!cancellationTokenSource.Token.IsCancellationRequested)
+                            {
+                                await DoWorkAsync(); // 작업 수행
+                                await Task.Delay(TimeSpan.FromSeconds(10), cancellationTokenSource.Token); // 취소 가능한 지연
+                            }
+                        }, cancellationTokenSource.Token);
+
+                        await timerTask; // 타이머가 종료될 때까지 대기
+                    }
+                    catch (TaskCanceledException)
+                    {
+                        throw;
+                    }
+                    finally
+                    {
+                        isRunning = false; // 타이머 종료
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                await LogService.LogMessage(ex.ToString());
             }
         }
 
@@ -215,16 +239,30 @@ namespace MDMSender
         /// </summary>
         private async Task StopTimerAsync()
         {
-            if (isRunning)
+            try
             {
-                isRunning = false; // 타이머 중지 플래그 설정
-
-                // 비동기 대기 (타이머 작업이 완료될 때까지)
-                if (timerTask != null)
+                if (isRunning)
                 {
-                    await timerTask; // Task.Wait() 대신 await 사용
-                    System.Windows.MessageBox.Show("MDM 프로그램 정지.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+                    cancellationTokenSource.Cancel(); // 타이머 중지 요청
+
+                    try
+                    {
+                        await timerTask!; // 타이머 작업 종료 대기
+                    }
+                    catch (TaskCanceledException)
+                    {
+                        // 타이머 취소 처리
+                    }
+                    finally
+                    {
+                        isRunning = false; // 타이머 상태 초기화
+                        System.Windows.MessageBox.Show("MDM 프로그램 정지.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                await LogService.LogMessage(ex.ToString());
             }
         }
 
@@ -233,17 +271,45 @@ namespace MDMSender
         /// </summary>
         private async Task DoWorkAsync()
         {
-            // 비동기 작업이 되어야 할곳.
-            await Task.Run(() =>
+            try
             {
-                Console.WriteLine("1초 경과됨: " + DateTime.Now);
-            });
+                // 비동기
+                DataTable? ResultDT = await StartForm!.SelectTable();
 
-            // UI에 반영해야하는것들은 여기서.
-            await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+                if (ResultDT is not null)
+                {
+                    bool UpdateResult = await StartForm.UpdateTable(ResultDT);
+
+                    if(UpdateResult)
+                    {
+                        // 여기서 HTTP 전송
+
+
+                        // UI에 반영해야하는것들은 여기서.
+                        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+                        {
+                            foreach (DataRow dr in ResultDT.Rows) 
+                            {
+                                await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t {dr["Title"]}" });
+                            }
+                        });
+                    }
+                }
+                else
+                {
+                    // UI에 반영해야하는것들은 여기서.
+                    await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+                    {
+
+                        await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t 전송할 데이터가 없습니다." });
+                    });
+                }
+
+            }
+            catch(Exception ex)
             {
-                await MDMFunctions.AddDataAsync(new SenderModel { DateTime = "1", Query = "A" });
-            });
+                await LogService.LogMessage(ex.ToString());
+            }
         }
 
      

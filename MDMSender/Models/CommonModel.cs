@@ -16,6 +16,13 @@ namespace MDMSender
         /// </summary>
         public static ObservableCollection<SenderModel> lstModel = new ObservableCollection<SenderModel>();
 
+
+        /// <summary>
+        /// 데이터베이스 연결문자열
+        /// </summary>
+        public static string? DBConnStr { get; set; }
+
+
         /// <summary>
         /// 프로그램 실행시간
         /// </summary>

@@ -12,7 +12,7 @@
                 <DataTemplate>
                     <Grid Margin="5">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
                             <!-- 첫 번째 열 (고정 너비) -->
                             <ColumnDefinition Width="*"/>
                             <!-- 두 번째 열 (남은 공간 차지) -->

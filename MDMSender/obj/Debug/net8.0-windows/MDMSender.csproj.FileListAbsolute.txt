@@ -28,8 +28,8 @@ C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\refint\MDMSen
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.pdb
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.genruntimeconfig.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\ref\MDMSender.dll
-C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\LiveCharts.dll
-C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.csproj.AssemblyReference.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\MDMSender.csproj.Up2Date
 C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Debug\net8.0-windows\MySqlConnector.dll

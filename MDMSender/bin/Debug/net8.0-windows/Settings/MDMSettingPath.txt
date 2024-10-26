@@ -3,6 +3,6 @@
   "DBPort": "3306",
   "DBUser": "root",
   "DBPW": "rladyddn!!95",
-  "DBName": "5",
+  "DBName": "ywstudy2",
   "Destination": "6"
 }

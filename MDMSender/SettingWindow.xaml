@@ -6,7 +6,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MDMSender"
              mc:Ignorable="d"
-            xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              Loaded="UserControl_Loaded"
              Background="White"
              d:DesignHeight="1280" d:DesignWidth="800">
@@ -146,7 +145,7 @@
                     </TextBox.Template>
                 </TextBox>
             </StackPanel>
-            
+
             <StackPanel Orientation="Vertical" Background="Transparent" Margin="10">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -154,7 +153,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Column="0" Content="연결테스트" Height="50" Background="#db5e56" Foreground="White" FontFamily="pack://application:,,,/Fonts/#나눔바른고딕OTF 옛한글" >
+                    <Button x:Name="btnDBCheck" Grid.Column="0" Content="연결테스트" Height="50" Background="#db5e56" Foreground="White" FontFamily="pack://application:,,,/Fonts/#나눔바른고딕OTF 옛한글" Click="btnDBCheck_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0" CornerRadius="5">
@@ -235,7 +234,7 @@
 
             <TextBlock Text="RUN TIME" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80" Foreground="Black" FontFamily="pack://application:,,,/Fonts/#나눔바른고딕OTF 옛한글" />
             <TextBlock Text="{Binding Source={x:Static local:CommonModel.RunTime}}"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="Black" FontFamily="pack://application:,,,/Fonts/#나눔바른고딕OTF 옛한글"  Margin="0 20 0 0"/>
-            <lvc:PieChart x:Name="pieChart" Grid.Row="2" LegendLocation="Bottom" Margin="0 0 0 250" MaxHeight="500px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"/>
+            <!--<lvc:PieChart x:Name="pieChart" Grid.Row="2" LegendLocation="Bottom" Margin="0 0 0 250" MaxHeight="500px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"/>-->
             
             </Grid>
         <!--</StackPanel>-->

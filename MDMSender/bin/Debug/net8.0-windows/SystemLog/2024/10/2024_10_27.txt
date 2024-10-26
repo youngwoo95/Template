@@ -1,0 +1,6 @@
+[2024-10-27 00:02:31]	MDM SENDER 시작
+[2024-10-27 00:03:54]	MDM SENDER 시작
+[2024-10-27 00:04:05]	MDM SENDER 종료
+[2024-10-27 00:04:05]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219

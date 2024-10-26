@@ -1,6 +1,5 @@
-﻿using LiveCharts;
-using LiveCharts.Wpf;
-using MDMSender.Models;
+﻿using MDMSender.Models;
+using MDMSender.Services;
 using Microsoft.VisualBasic.ApplicationServices;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,10 +14,12 @@ namespace MDMSender
     /// </summary>
     public partial class SettingWindow : UserControl
     {
+        DBService DBManager;
+
         public SettingWindow()
         {
             InitializeComponent();
-
+            DBManager = new DBService();
         }
 
         private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
@@ -29,23 +30,6 @@ namespace MDMSender
             txtDBPW.Password = Settings.DBPW ?? String.Empty;
             txtDBName.Text = Settings.DBName ?? String.Empty;
             txtDestination.Text = Settings.Destination ?? String.Empty;
-
-            // 파이 차트에 데이터 추가
-            pieChart.Series = new SeriesCollection
-            {
-                new PieSeries
-                {
-                    Title = "SUCCESS",
-                    Values = new ChartValues<double> { 55 },
-                    DataLabels = false,
-                },
-                new PieSeries
-                {
-                    Title = "FAIL",
-                    Values = new ChartValues<double> { 15 },
-                    DataLabels = false,
-                },
-            };
         }
 
         /// <summary>
@@ -55,54 +39,90 @@ namespace MDMSender
         /// <param name="e"></param>
         private async void btnSave_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtDBIpAddress.Text) ||
-                String.IsNullOrWhiteSpace(txtDBPort.Text) ||
-                String.IsNullOrWhiteSpace(txtDBUser.Text) ||
-                String.IsNullOrWhiteSpace(txtDBPW.Password) ||
-                String.IsNullOrWhiteSpace(txtDBName.Text) ||
-                String.IsNullOrWhiteSpace(txtDestination.Text))
+            try
             {
-                MessageBox.Show("입력형식이 잘못되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (String.IsNullOrWhiteSpace(txtDBIpAddress.Text) ||
+                    String.IsNullOrWhiteSpace(txtDBPort.Text) ||
+                    String.IsNullOrWhiteSpace(txtDBUser.Text) ||
+                    String.IsNullOrWhiteSpace(txtDBPW.Password) ||
+                    String.IsNullOrWhiteSpace(txtDBName.Text) ||
+                    String.IsNullOrWhiteSpace(txtDestination.Text))
+                {
+                    MessageBox.Show("입력형식이 잘못되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                Settings.DBIpAddress = txtDBIpAddress.Text;
+                Settings.DBPort = txtDBPort.Text;
+                Settings.DBUser = txtDBUser.Text;
+                Settings.DBPW = txtDBPW.Password;
+                Settings.DBName = txtDBName.Text;
+                Settings.Destination = txtDestination.Text;
+
+                JObject SettingObj = new JObject();
+                SettingObj.Add("DBIpAddress", Settings.DBIpAddress); // IP주소
+                SettingObj.Add("DBPort", Settings.DBPort); // PORT
+                SettingObj.Add("DBUser", Settings.DBUser); // USER
+                SettingObj.Add("DBPW", Settings.DBPW); // PW
+                SettingObj.Add("DBName", Settings.DBName); // NAME
+                SettingObj.Add("Destination", Settings.Destination);
+
+
+                string SettingPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings");
+
+                DirectoryInfo di = new DirectoryInfo(SettingPath);
+
+                if (!di.Exists)
+                {
+                    di.Create();
+                }
+
+                string FilePath = Path.Combine(SettingPath, "MDMSettingPath.txt");
+
+                // 없으면 생성
+                using (StreamWriter sw = new StreamWriter(FilePath, false))
+                {
+                    System.Diagnostics.StackTrace objStackTrace = new System.Diagnostics.StackTrace(new System.Diagnostics.StackFrame(1));
+                    var s = objStackTrace.ToString();
+                    await sw.WriteLineAsync(SettingObj.ToString());
+
+                    MessageBox.Show("저장이 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-
-            Settings.DBIpAddress = txtDBIpAddress.Text;
-            Settings.DBPort = txtDBPort.Text;
-            Settings.DBUser = txtDBUser.Text;
-            Settings.DBPW = txtDBPW.Password;
-            Settings.DBName = txtDBName.Text;
-            Settings.Destination = txtDestination.Text;
-
-            JObject SettingObj = new JObject();
-            SettingObj.Add("DBIpAddress", Settings.DBIpAddress); // IP주소
-            SettingObj.Add("DBPort", Settings.DBPort); // PORT
-            SettingObj.Add("DBUser", Settings.DBUser); // USER
-            SettingObj.Add("DBPW", Settings.DBPW); // PW
-            SettingObj.Add("DBName", Settings.DBName); // NAME
-            SettingObj.Add("Destination", Settings.Destination);
-
-
-            string SettingPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings");
-            
-            DirectoryInfo di = new DirectoryInfo(SettingPath);
-
-            if(!di.Exists)
+            catch(Exception ex)
             {
-                di.Create();
+                await LogService.LogMessage(ex.ToString());
             }
+        }
 
-            string FilePath = Path.Combine(SettingPath, "MDMSettingPath.txt");
-
-            // 없으면 생성
-            using (StreamWriter sw = new StreamWriter(FilePath, false))
+        private async void btnDBCheck_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            try
             {
-                System.Diagnostics.StackTrace objStackTrace = new System.Diagnostics.StackTrace(new System.Diagnostics.StackFrame(1));
-                var s = objStackTrace.ToString();
-                await sw.WriteLineAsync(SettingObj.ToString());
+                if (String.IsNullOrWhiteSpace(txtDBIpAddress.Text) ||
+                  String.IsNullOrWhiteSpace(txtDBPort.Text) ||
+                  String.IsNullOrWhiteSpace(txtDBUser.Text) ||
+                  String.IsNullOrWhiteSpace(txtDBPW.Password) ||
+                  String.IsNullOrWhiteSpace(txtDBName.Text) ||
+                  String.IsNullOrWhiteSpace(txtDestination.Text))
+                {
+                    MessageBox.Show("입력형식이 잘못되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                MessageBox.Show("저장이 완료되었습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string DBConnCheck = $"Server={txtDBIpAddress.Text};Port={txtDBPort.Text};Database={txtDBName.Text};User Id={txtDBUser.Text};Password={txtDBPW.Password};Connect Timeout=30;SslMode=None;Pooling=true;Min Pool Size=2;Max Pool Size=30;";
+
+                bool DBConnectionCheck = await DBManager.DBConnectionCheck(DBConnCheck);
+
+                if (DBConnectionCheck)
+                    MessageBox.Show("데이터베이스 연결성공.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("데이터베이스 연결실패.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
+            catch(Exception ex)
+            {
+                await LogService.LogMessage(ex.ToString());
+            }
         }
 
     }

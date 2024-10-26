@@ -83,3 +83,361 @@
 [2024-10-26 20:23:17]	설정화면 진입
 [2024-10-26 20:28:44]	프로그램 시작.
 [2024-10-26 20:28:45]	설정화면 진입
+[2024-10-26 20:36:06]	프로그램 시작.
+[2024-10-26 20:36:06]	설정화면 진입
+[2024-10-26 20:36:13]	MDM SENDER 시작
+[2024-10-26 20:36:15]	MDM SENDER 종료
+[2024-10-26 20:36:18]	설정화면 진입
+[2024-10-26 20:57:31]	프로그램 시작.
+[2024-10-26 20:57:34]	설정화면 진입
+[2024-10-26 20:58:55]	프로그램 시작.
+[2024-10-26 20:58:57]	설정화면 진입
+[2024-10-26 20:59:26]	프로그램 시작.
+[2024-10-26 20:59:27]	설정화면 진입
+[2024-10-26 20:59:43]	프로그램 시작.
+[2024-10-26 20:59:47]	설정화면 진입
+[2024-10-26 21:00:25]	프로그램 시작.
+[2024-10-26 21:00:27]	설정화면 진입
+[2024-10-26 21:20:18]	프로그램 시작.
+[2024-10-26 21:20:20]	설정화면 진입
+[2024-10-26 21:20:21]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:20:21]	System.FormatException: String 'Open' was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 32
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:20:23]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:20:23]	System.FormatException: String 'Open' was not recognized as a valid Boolean.
+   at System.Boolean.Parse(String value)
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 32
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:20:34]	프로그램 시작.
+[2024-10-26 21:20:36]	설정화면 진입
+[2024-10-26 21:20:45]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:21:08]	프로그램 시작.
+[2024-10-26 21:21:08]	설정화면 진입
+[2024-10-26 21:21:09]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:21:18]	프로그램 시작.
+[2024-10-26 21:21:22]	설정화면 진입
+[2024-10-26 21:21:25]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:21:43]	프로그램 시작.
+[2024-10-26 21:21:44]	설정화면 진입
+[2024-10-26 21:21:45]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:21:49]	MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1080
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 422
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 109
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 142
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 25
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:21:50]	MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1080
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 422
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 109
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 142
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 25
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:21:51]	MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1080
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 422
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 109
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 142
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 25
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:21:51]	MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1080
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 422
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 109
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 142
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 25
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:21:54]	Server=127.0.0.1;Port=3306;Database=ywstudy2;User Id=root;Password=rladyddn!!95;Connect Timeout=30;SslMode=None;의 데이터베이스 연결 여부: Open
+[2024-10-26 21:24:31]	프로그램 시작.
+[2024-10-26 21:24:32]	설정화면 진입
+[2024-10-26 21:24:35]	MySqlConnector.MySqlException (0x80004005): Access denied for user 'root1'@'localhost' (using password: YES)
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 885
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 527
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 109
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 142
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 27
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:29:01]	프로그램 시작.
+[2024-10-26 21:29:02]	설정화면 진입
+[2024-10-26 21:32:20]	프로그램 시작.
+[2024-10-26 21:32:23]	MDM SENDER 시작
+[2024-10-26 21:32:25]	MDM SENDER 종료
+[2024-10-26 21:32:28]	설정화면 진입
+[2024-10-26 21:32:29]	MDM SENDER 시작
+[2024-10-26 21:32:31]	MDM SENDER 종료
+[2024-10-26 21:47:03]	프로그램 시작.
+[2024-10-26 21:47:03]	설정화면 진입
+[2024-10-26 21:47:08]	MySqlConnector.MySqlException (0x80004005): Unknown database 'ywstudy23'
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 885
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 527
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.CreateMinimumPooledSessions(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 405
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 33
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 27
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 21:50:14]	프로그램 시작.
+[2024-10-26 21:50:19]	설정화면 진입
+[2024-10-26 21:52:20]	프로그램 시작.
+[2024-10-26 21:52:21]	설정화면 진입
+[2024-10-26 21:53:14]	프로그램 시작.
+[2024-10-26 21:53:15]	설정화면 진입
+[2024-10-26 22:03:14]	MDM SENDER 시작
+[2024-10-26 22:03:16]	MDM SENDER 종료
+[2024-10-26 22:03:32]	MDM SENDER 시작
+[2024-10-26 22:03:36]	MDM SENDER 종료
+[2024-10-26 22:09:43]	MDM SENDER 시작
+[2024-10-26 22:09:44]	MDM SENDER 종료
+[2024-10-26 22:09:55]	MDM SENDER 시작
+[2024-10-26 22:09:56]	MDM SENDER 종료
+[2024-10-26 22:09:58]	MDM SENDER 시작
+[2024-10-26 22:09:59]	MDM SENDER 종료
+[2024-10-26 22:11:52]	MDM SENDER 시작
+[2024-10-26 22:11:53]	MDM SENDER 종료
+[2024-10-26 22:12:10]	MDM SENDER 시작
+[2024-10-26 22:12:12]	MDM SENDER 종료
+[2024-10-26 22:12:14]	MDM SENDER 시작
+[2024-10-26 22:12:15]	MDM SENDER 종료
+[2024-10-26 22:12:16]	MDM SENDER 시작
+[2024-10-26 22:12:18]	MDM SENDER 종료
+[2024-10-26 22:12:40]	MDM SENDER 시작
+[2024-10-26 22:12:41]	MDM SENDER 종료
+[2024-10-26 22:12:55]	MDM SENDER 시작
+[2024-10-26 22:12:56]	MDM SENDER 종료
+[2024-10-26 22:13:42]	MDM SENDER 시작
+[2024-10-26 22:13:43]	MDM SENDER 종료
+[2024-10-26 22:14:41]	MySqlConnector.MySqlException (0x80004005): Unable to connect to any of the specified MySQL hosts.
+   at MySqlConnector.Core.ServerSession.OpenTcpSocketAsync(ConnectionSettings cs, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 1080
+   at MySqlConnector.Core.ServerSession.ConnectAsync(ConnectionSettings cs, MySqlConnection connection, Int64 startingTimestamp, ILoadBalancer loadBalancer, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 422
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 427
+   at MySqlConnector.Core.ConnectionPool.ConnectSessionAsync(MySqlConnection connection, Action`4 logMessage, Int64 startingTimestamp, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 432
+   at MySqlConnector.Core.ConnectionPool.CreateMinimumPooledSessions(MySqlConnection connection, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 405
+   at MySqlConnector.Core.ConnectionPool.GetSessionAsync(MySqlConnection connection, Int64 startingTimestamp, Int32 timeoutMilliseconds, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ConnectionPool.cs:line 33
+   at MySqlConnector.MySqlConnection.CreateSessionAsync(ConnectionPool pool, Int64 startingTimestamp, Activity activity, Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 1056
+   at MySqlConnector.MySqlConnection.OpenAsync(Nullable`1 ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlConnection.cs:line 556
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 27
+   at MDMSender.Services.DBService.DBConnectionCheck(String ConnStr) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 35
+[2024-10-26 22:14:54]	MDM SENDER 시작
+[2024-10-26 22:14:59]	MDM SENDER 종료
+[2024-10-26 22:15:06]	MDM SENDER 시작
+[2024-10-26 22:15:07]	MDM SENDER 종료
+[2024-10-26 22:15:10]	MDM SENDER 시작
+[2024-10-26 22:15:11]	MDM SENDER 종료
+[2024-10-26 22:46:13]	MDM SENDER 시작
+[2024-10-26 22:47:26]	MDM SENDER 시작
+[2024-10-26 22:50:08]	MDM SENDER 시작
+[2024-10-26 22:50:28]	MDM SENDER 시작
+[2024-10-26 22:50:36]	MySqlConnector.MySqlException (0x80004005): Table 'ywstudy2.temptable1' doesn't exist
+   at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 885
+   at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37
+   at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130
+   at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 482
+   at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56
+   at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357
+   at MDMSender.Services.DBService.DBQuery(String query) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 61
+   at MDMSender.Services.DBService.DBQuery(String query) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 65
+   at MDMSender.Services.DBService.DBQuery(String query) in C:\Users\kyw\Documents\Template\MDMSender\Services\DBService.cs:line 66
+[2024-10-26 22:55:01]	설정화면 진입
+[2024-10-26 22:56:52]	설정화면 진입
+[2024-10-26 22:59:08]	설정화면 진입
+[2024-10-26 22:59:21]	설정화면 진입
+[2024-10-26 23:00:01]	설정화면 진입
+[2024-10-26 23:00:59]	설정화면 진입
+[2024-10-26 23:03:03]	설정화면 진입
+[2024-10-26 23:03:36]	설정화면 진입
+[2024-10-26 23:04:45]	설정화면 진입
+[2024-10-26 23:05:08]	설정화면 진입
+[2024-10-26 23:06:00]	설정화면 진입
+[2024-10-26 23:06:44]	설정화면 진입
+[2024-10-26 23:07:04]	설정화면 진입
+[2024-10-26 23:07:26]	설정화면 진입
+[2024-10-26 23:07:52]	설정화면 진입
+[2024-10-26 23:09:08]	설정화면 진입
+[2024-10-26 23:11:24]	설정화면 진입
+[2024-10-26 23:11:59]	설정화면 진입
+[2024-10-26 23:12:37]	설정화면 진입
+[2024-10-26 23:12:57]	MDM SENDER 시작
+[2024-10-26 23:13:03]	설정화면 진입
+[2024-10-26 23:13:09]	설정화면 진입
+[2024-10-26 23:13:18]	MDM SENDER 시작
+[2024-10-26 23:13:19]	MDM SENDER 종료
+[2024-10-26 23:13:52]	MDM SENDER 시작
+[2024-10-26 23:13:54]	설정화면 진입
+[2024-10-26 23:15:17]	MDM SENDER 시작
+[2024-10-26 23:15:22]	MDM SENDER 종료
+[2024-10-26 23:17:22]	MDM SENDER 시작
+[2024-10-26 23:17:23]	MDM SENDER 종료
+[2024-10-26 23:17:27]	MDM SENDER 시작
+[2024-10-26 23:17:29]	MDM SENDER 종료
+[2024-10-26 23:17:42]	MDM SENDER 시작
+[2024-10-26 23:17:44]	MDM SENDER 종료
+[2024-10-26 23:17:44]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 206
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:17:46]	MDM SENDER 시작
+[2024-10-26 23:17:47]	MDM SENDER 종료
+[2024-10-26 23:17:47]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 206
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:17:52]	MDM SENDER 시작
+[2024-10-26 23:18:04]	MDM SENDER 종료
+[2024-10-26 23:18:04]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 206
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:19:54]	MDM SENDER 시작
+[2024-10-26 23:19:55]	MDM SENDER 종료
+[2024-10-26 23:19:55]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 206
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:21:15]	MDM SENDER 시작
+[2024-10-26 23:21:18]	MDM SENDER 종료
+[2024-10-26 23:21:18]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:21:21]	MDM SENDER 시작
+[2024-10-26 23:21:23]	MDM SENDER 종료
+[2024-10-26 23:21:23]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:21:27]	MDM SENDER 시작
+[2024-10-26 23:21:28]	MDM SENDER 종료
+[2024-10-26 23:21:28]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:21:29]	MDM SENDER 시작
+[2024-10-26 23:21:31]	MDM SENDER 종료
+[2024-10-26 23:21:31]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:21:50]	MDM SENDER 시작
+[2024-10-26 23:21:52]	MDM SENDER 종료
+[2024-10-26 23:21:52]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:21:54]	MDM SENDER 시작
+[2024-10-26 23:21:56]	MDM SENDER 종료
+[2024-10-26 23:21:56]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:22:32]	MDM SENDER 시작
+[2024-10-26 23:22:37]	MDM SENDER 종료
+[2024-10-26 23:22:37]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:22:40]	MDM SENDER 시작
+[2024-10-26 23:23:07]	MDM SENDER 종료
+[2024-10-26 23:23:07]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:23:10]	설정화면 진입
+[2024-10-26 23:23:13]	MDM SENDER 시작
+[2024-10-26 23:23:16]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:23:16]	설정화면 진입
+[2024-10-26 23:23:21]	MDM SENDER 시작
+[2024-10-26 23:23:22]	MDM SENDER 종료
+[2024-10-26 23:23:22]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 213
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 217
+   at MDMSender.MainWindow.btnStart_Click(Object sender, RoutedEventArgs e) in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 162
+[2024-10-26 23:24:37]	MDM SENDER 시작
+[2024-10-26 23:24:49]	MDM SENDER 종료
+[2024-10-26 23:24:49]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:26:04]	MDM SENDER 시작
+[2024-10-26 23:26:18]	MDM SENDER 종료
+[2024-10-26 23:26:18]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:26:25]	MDM SENDER 시작
+[2024-10-26 23:26:49]	MDM SENDER 종료
+[2024-10-26 23:26:49]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:26:57]	설정화면 진입
+[2024-10-26 23:27:14]	MDM SENDER 시작
+[2024-10-26 23:27:16]	MDM SENDER 종료
+[2024-10-26 23:27:16]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:27:44]	MDM SENDER 시작
+[2024-10-26 23:28:35]	MDM SENDER 시작
+[2024-10-26 23:28:51]	MDM SENDER 시작
+[2024-10-26 23:29:27]	MDM SENDER 시작
+[2024-10-26 23:29:31]	MDM SENDER 종료
+[2024-10-26 23:29:31]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:29:51]	MDM SENDER 시작
+[2024-10-26 23:29:54]	MDM SENDER 종료
+[2024-10-26 23:29:54]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:30:10]	MDM SENDER 시작
+[2024-10-26 23:30:47]	MDM SENDER 시작
+[2024-10-26 23:30:49]	MDM SENDER 종료
+[2024-10-26 23:30:49]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:31:07]	MDM SENDER 시작
+[2024-10-26 23:31:18]	MDM SENDER 시작
+[2024-10-26 23:31:31]	MDM SENDER 종료
+[2024-10-26 23:31:31]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:31:33]	설정화면 진입
+[2024-10-26 23:31:44]	MDM SENDER 시작
+[2024-10-26 23:31:48]	MDM SENDER 종료
+[2024-10-26 23:31:48]	System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at MDMSender.MainWindow.<StartTimerAsync>b__18_0() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 215
+   at MDMSender.MainWindow.StartTimerAsync() in C:\Users\kyw\Documents\Template\MDMSender\MainWindow.xaml.cs:line 219
+[2024-10-26 23:39:09]	MDM SENDER 시작
+[2024-10-26 23:41:46]	MDM SENDER 시작
+[2024-10-26 23:42:32]	MDM SENDER 시작
+[2024-10-26 23:42:58]	MDM SENDER 시작
+[2024-10-26 23:54:44]	MDM SENDER 시작
+[2024-10-26 23:55:16]	MDM SENDER 시작
+[2024-10-26 23:56:12]	MDM SENDER 시작
+[2024-10-26 23:56:40]	MDM SENDER 시작
+[2024-10-26 23:59:05]	MDM SENDER 시작
+[2024-10-26 23:59:56]	MDM SENDER 시작
