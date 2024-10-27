@@ -4,5 +4,5 @@
   "DBUser": "root",
   "DBPW": "rladyddn!!95",
   "DBName": "ywstudy2",
-  "Destination": "6"
+  "Destination": "http://127.0.0.1:5171/api/UpdateAPI"
 }

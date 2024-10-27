@@ -1,6 +1,7 @@
 ﻿using MDMSender.Models;
 using MDMSender.Services;
 using Microsoft.VisualBasic.ApplicationServices;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
@@ -24,12 +25,24 @@ namespace MDMSender
 
         private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            txtDBIpAddress.Text = Settings.DBIpAddress ?? String.Empty;
-            txtDBPort.Text = Settings.DBPort ?? String.Empty;
-            txtDBUser.Text = Settings.DBUser ?? String.Empty;
-            txtDBPW.Password = Settings.DBPW ?? String.Empty;
-            txtDBName.Text = Settings.DBName ?? String.Empty;
-            txtDestination.Text = Settings.Destination ?? String.Empty;
+            string settingPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings", "MDMSettingPath.txt");
+            if (File.Exists(settingPath))
+            {
+                // JSON 파일 읽기 및 역직렬화
+                string? json = File.ReadAllText(settingPath);
+                JObject JsonParse = JObject.Parse(json);
+
+                txtDBIpAddress.Text = JsonParse["DBIpAddress"]?.ToString() ?? String.Empty;
+                txtDBPort.Text = JsonParse["DBPort"]?.ToString() ?? String.Empty;
+                txtDBUser.Text = JsonParse["DBUser"]?.ToString() ?? String.Empty;
+                txtDBPW.Password = JsonParse["DBPW"]?.ToString() ?? String.Empty;
+                txtDBName.Text = JsonParse["DBName"]?.ToString() ?? String.Empty;
+                txtDestination.Text = JsonParse["Destination"]?.ToString() ?? String.Empty;
+            }
+            else
+            {
+                Console.WriteLine("JSON 파일이 존재하지 않습니다.");
+            }
         }
 
         /// <summary>
@@ -125,5 +138,6 @@ namespace MDMSender
             }
         }
 
+      
     }
 }

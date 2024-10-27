@@ -23,7 +23,7 @@ namespace MDMSender
         
         // FORM_1
         StartWindow? StartForm;
-
+        RESTService? RestService;
 
         public MainWindow()
         {
@@ -34,7 +34,9 @@ namespace MDMSender
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //RightStackPanel.Content = new StartWindow();
+            Console.WriteLine("몇번실행?");
             StartForm = new StartWindow();
+            RestService = new RESTService();
             RightStackPanel.Content = StartForm;
         }
 
@@ -198,39 +200,46 @@ namespace MDMSender
         {
             try
             {
-                if (!isRunning)
+                if (isRunning) return; // 중복 실행 방지
+
+                isRunning = true; // 타이머 실행 중 플래그 설정
+                cancellationTokenSource = new CancellationTokenSource(); // 새로운 토큰 생성
+
+                timerTask = Task.Run(async () =>
                 {
-                    isRunning = true; // 타이머 실행 중 플래그 설정
-                    cancellationTokenSource = new CancellationTokenSource(); // 새로운 토큰 생성
+                    System.Windows.MessageBox.Show("MDM 프로그램 시작.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    try
+                    while (!cancellationTokenSource.Token.IsCancellationRequested)
                     {
-                        timerTask = Task.Run(async () =>
+                        try
                         {
-                            System.Windows.MessageBox.Show("MDM 프로그램 시작.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+                            await DoWorkAsync(); // 작업 수행
+                            await Task.Delay(TimeSpan.FromSeconds(10), cancellationTokenSource.Token); // 취소 가능한 지연
+                        }
+                        catch (TaskCanceledException)
+                        {
+                            // 취소된 작업에 대한 예외 무시
+                            System.Diagnostics.Debug.WriteLine("타이머 작업이 취소되었습니다.");
+                        }
+                    }
+                }, cancellationTokenSource.Token);
 
-                            while (!cancellationTokenSource.Token.IsCancellationRequested)
-                            {
-                                await DoWorkAsync(); // 작업 수행
-                                await Task.Delay(TimeSpan.FromSeconds(10), cancellationTokenSource.Token); // 취소 가능한 지연
-                            }
-                        }, cancellationTokenSource.Token);
-
-                        await timerTask; // 타이머가 종료될 때까지 대기
-                    }
-                    catch (TaskCanceledException)
-                    {
-                        throw;
-                    }
-                    finally
-                    {
-                        isRunning = false; // 타이머 종료
-                    }
-                }
+                // 타이머 작업 종료 대기
+                await timerTask;
             }
-            catch(Exception ex)
+            catch (TaskCanceledException)
             {
-                await LogService.LogMessage(ex.ToString());
+                // 취소된 작업에 대한 최상위 예외 처리
+                System.Diagnostics.Debug.WriteLine("타이머 작업이 정상적으로 종료되었습니다.");
+            }
+            catch (Exception ex)
+            {
+                // 다른 예외 처리
+                await LogService.LogMessage($"StartTimerAsync 예외 발생: {ex}");
+            }
+            finally
+            {
+                isRunning = false; // 타이머 종료 상태 설정
             }
         }
 
@@ -245,24 +254,40 @@ namespace MDMSender
                 {
                     cancellationTokenSource.Cancel(); // 타이머 중지 요청
 
-                    try
+                    if (timerTask != null) // 타이머가 null이 아닐 때만 대기
                     {
-                        await timerTask!; // 타이머 작업 종료 대기
+                        try
+                        {
+                            await timerTask; // 타이머 작업 종료 대기
+                        }
+                        catch (TaskCanceledException)
+                        {
+                            // 타이머 작업이 정상적으로 취소된 경우 처리
+                            System.Diagnostics.Debug.WriteLine("타이머 작업이 취소되었습니다.");
+                        }
+                        catch (Exception ex)
+                        {
+                            // 예기치 않은 예외 처리
+                            await LogService.LogMessage($"타이머 작업 중 오류: {ex}");
+                        }
+                        finally
+                        {
+                            isRunning = false; // 타이머 상태 초기화
+                            System.Windows.MessageBox.Show("MDM 프로그램 정지.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
                     }
-                    catch (TaskCanceledException)
+                    else
                     {
-                        // 타이머 취소 처리
-                    }
-                    finally
-                    {
-                        isRunning = false; // 타이머 상태 초기화
-                        System.Windows.MessageBox.Show("MDM 프로그램 정지.", "알림", MessageBoxButton.OK, MessageBoxImage.Information);
+                        // 타이머가 이미 종료되었거나 초기화되지 않은 경우
+                        System.Diagnostics.Debug.WriteLine("타이머 작업이 실행 중이 아닙니다.");
+                        isRunning = false;
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                await LogService.LogMessage(ex.ToString());
+                // 최상위 예외 처리
+                await LogService.LogMessage($"StopTimerAsync 예외 발생: {ex}");
             }
         }
 
@@ -283,31 +308,37 @@ namespace MDMSender
                     if(UpdateResult)
                     {
                         // 여기서 HTTP 전송
+                        bool SendResult = await RestService!.SendUrl(ResultDT);
 
-
-                        // UI에 반영해야하는것들은 여기서.
-                        await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+                        if (SendResult)
                         {
-                            foreach (DataRow dr in ResultDT.Rows) 
+                            // UI에 반영해야하는것들은 여기서.
+                            await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
                             {
-                                await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t {dr["Title"]}" });
-                            }
-                        });
+                                foreach (DataRow dr in ResultDT.Rows)
+                                {
+                                    await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t {dr["Title"]}" });
+                                }
+                            });
+                        }
+                        else
+                        {
+                            await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t 데이터 전송에 실패했습니다." });
+                        }
                     }
                 }
-                else
+                else // 전송할 데이터가 없을때
                 {
-                    // UI에 반영해야하는것들은 여기서.
                     await System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
                     {
-
                         await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t 전송할 데이터가 없습니다." });
                     });
                 }
-
             }
             catch(Exception ex)
             {
+
+                await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t {ex.Message}" });
                 await LogService.LogMessage(ex.ToString());
             }
         }
