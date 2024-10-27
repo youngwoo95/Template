@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
+		<OutputType>WinExe</OutputType>
 		<!-- WPF 창 애플리케이션 실행 -->
 		<TargetFramework>net8.0-windows</TargetFramework>
 		<!-- Windows 플랫폼 지정 -->
@@ -12,6 +12,8 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<!-- Windows Forms 활성화 -->
 		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<ApplicationIcon>Images\run_ico.ico</ApplicationIcon>
+		<PackageIcon>Stec_Logo.png</PackageIcon>
 		<!-- 관리자 권한 설정 -->
 	</PropertyGroup>
 
@@ -43,6 +45,13 @@
 	  <Resource Include="Fonts\NanumSquareEB.otf">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Images\Stec_Logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 
