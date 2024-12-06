@@ -123,7 +123,8 @@ namespace MDMSender
                     return;
                 }
 
-                string DBConnCheck = $"Server={txtDBIpAddress.Text};Port={txtDBPort.Text};Database={txtDBName.Text};User Id={txtDBUser.Text};Password={txtDBPW.Password};Connect Timeout=30;SslMode=None;Pooling=true;Min Pool Size=2;Max Pool Size=30;";
+                //string DBConnCheck = $"Server={txtDBIpAddress.Text};Port={txtDBPort.Text};Database={txtDBName.Text};User Id={txtDBUser.Text};Password={txtDBPW.Password};Connect Timeout=30;SslMode=None;Pooling=true;Min Pool Size=2;Max Pool Size=30;";
+                string DBConnCheck = $"User Id={txtDBUser.Text};Password={txtDBPW.Password};Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={txtDBIpAddress.Text})(PORT={txtDBPort.Text}))(CONNECT_DATA=(SERVICE_NAME={txtDBName.Text})));Pooling=true;Min Pool Size=2;Max Pool Size=30;";
 
                 bool DBConnectionCheck = await DBManager.DBConnectionCheck(DBConnCheck);
 

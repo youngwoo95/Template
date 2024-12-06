@@ -1,6 +1,5 @@
 ﻿using MDMSender.Models;
 using MDMSender.Services;
-using MySqlConnector;
 using Newtonsoft.Json.Linq;
 using System.Data;
 using System.IO;
@@ -61,7 +60,8 @@ namespace MDMSender
                     else
                     {
                         Console.WriteLine(CommonModel.DBConnStr);
-                        CommonModel.DBConnStr = $"Server={Settings.DBIpAddress};Port={Settings.DBPort};Database={Settings.DBName};User Id={Settings.DBUser};Password={Settings.DBPW};Connect Timeout=30;SslMode=None;Pooling=true;Min Pool Size=2;Max Pool Size=30;";
+                        //CommonModel.DBConnStr = $"Server={Settings.DBIpAddress};Port={Settings.DBPort};Database={Settings.DBName};User Id={Settings.DBUser};Password={Settings.DBPW};Connect Timeout=30;SslMode=None;Pooling=true;Min Pool Size=2;Max Pool Size=30;";
+                        CommonModel.DBConnStr = $"User Id={Settings.DBUser};Password={Settings.DBPW};Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={Settings.DBIpAddress})(PORT={Settings.DBPort}))(CONNECT_DATA=(SERVICE_NAME={Settings.DBName})));Pooling=true;Min Pool Size=2;Max Pool Size=30;";
                         return true;
                     }
                 }
@@ -110,8 +110,16 @@ namespace MDMSender
         {
             try
             {
-                string query = $"SELECT * FROM temptable";
-                
+                string query = $"SELECT EVT_TIME as GETTIME, " +
+                    $"HUMAN_ID, " +
+                    $"FN_GET_SABUN(HUMAN_ID) as SABUN, " +
+                    $"BUTTON_STATUS as BUTTONSTATE, " +
+                    $"DECODE(BUTTON_STATUS,'1','TRUE','2','FALSE','3','FALSE','4','TRUE',BUTTON_STATUS) as BUTTONRESULT, " +
+                    $"SEND_YN " +
+                    $"FROM GUNTAE_EVENT " +
+                    $"WHERE EVT_REASON = 'C' AND COMMAND_CODE = 'E' AND EVT_CODE = '1' AND HUMAN_ID is not null AND FN_GET_SABUN(HUMAN_ID) is not null AND EVT_TIME >= (SELECT SYSDATE - 3/24 FROM DUAL) AND (SEND_YN is null or SEND_YN = 'N')";
+
+
                 DataTable? ResultDT = await DBManager.DBSelectQuery(query);
 
                 if (ResultDT != null)

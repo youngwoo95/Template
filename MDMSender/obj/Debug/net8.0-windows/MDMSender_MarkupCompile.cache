@@ -1,7 +1,7 @@
 ﻿MDMSender
 
 
-exe
+winexe
 C#
 .cs
 C:\Users\kyw\Documents\Template\MDMSender\obj\Debug\net8.0-windows\
@@ -13,7 +13,7 @@ C:\Users\kyw\Documents\Template\MDMSender\App.xaml
 31286377048
 4-783534398
 131556852930
-210-1438502286
+2101434168012
 MainWindow.xaml;SettingWindow.xaml;StartWindow.xaml;
 
 False

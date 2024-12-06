@@ -1,5 +1,6 @@
 ﻿using MDMSender.Models;
-using MySqlConnector;
+using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Data;
 
 namespace MDMSender.Services
@@ -21,11 +22,11 @@ namespace MDMSender.Services
         {
             try
             {
-                await using (MySqlConnection connection = new MySqlConnection(ConnStr))
+                await using (OracleConnection connection = new OracleConnection(ConnStr))
                 {
                     await connection.OpenAsync(); // DB 연결
 
-                    MySqlCommand comm = new MySqlCommand("SELECT 1", connection);
+                    OracleCommand comm = new OracleCommand("SELECT 1 FROM DUAL", connection);
                     var result = await comm.ExecuteScalarAsync();
 
                     if (result != null && result.ToString() == "1")
@@ -49,13 +50,13 @@ namespace MDMSender.Services
         {
             try
             {
-                await using (MySqlConnection connection = new MySqlConnection(CommonModel.DBConnStr))
+                await using (OracleConnection connection = new OracleConnection(CommonModel.DBConnStr))
                 {
                     DataTable DBResult = new DataTable();
 
                     await connection.OpenAsync(); // DB 연결
 
-                    await using MySqlCommand command = new MySqlCommand(query, connection);
+                    await using OracleCommand command = new OracleCommand(query, connection);
                     
                     // 비동기 Reader
                     await using var reader = await command.ExecuteReaderAsync();
@@ -81,30 +82,38 @@ namespace MDMSender.Services
         {
             try
             {
-                await using (MySqlConnection connection = new MySqlConnection(CommonModel.DBConnStr))
+                await using (OracleConnection connection = new OracleConnection(CommonModel.DBConnStr))
                 {
                     await connection.OpenAsync();
 
-                    using var transaction = await connection.BeginTransactionAsync();
+                    
+                    OracleTransaction transaction = connection.BeginTransaction();
                     try
                     {
                         foreach (DataRow row in UpdateDT.Rows)
                         {
-                            string? Column1 = Convert.ToString(row["Title"]);
-                            string? Column2 = Convert.ToString(row["CurrentDT"]);
+                            string? Column1 = Convert.ToString(row["humanid"]);
+                            DateTime GetTime = Convert.ToDateTime(row["GETTIME"]);
+                            string Column2 = GetTime.ToString("yyyyMMddHHmmss");
 
                             if (String.IsNullOrWhiteSpace(Column1) || String.IsNullOrWhiteSpace(Column2))
                                 return false;
 
-                            // 한건식 적용하기 위함.
-                            string query = "UPDATE temptable SET Title = @Title, CurrentDT = @CurrentDT WHERE Title = @ID";
+                            // SQL 쿼리
+                            string query = @"UPDATE GUNTAE_EVENT 
+                                     SET SEND_YN = 'Y' 
+                                     WHERE evt_time = TO_DATE(:EvtTime, 'YYYYMMDDHH24MISS') 
+                                     AND human_id = :HumanId";
 
-                            await using (MySqlCommand command = new MySqlCommand(query, connection, transaction))
+                            // OracleCommand로 쿼리 실행
+                            await using (OracleCommand command = new OracleCommand(query, connection))
                             {
-                                // 매개변수에 값 할당
-                                command.Parameters.AddWithValue("@Title", Column1);
-                                command.Parameters.AddWithValue("@CurrentDT", DateTime.Now);
-                                command.Parameters.AddWithValue("@ID", Column1); // 조건 컬럼
+                                // 트랜잭션 설정
+                                command.Transaction = transaction;
+
+                                // 매개변수에 값 바인딩
+                                command.Parameters.Add(new OracleParameter("EvtTime", Column2));
+                                command.Parameters.Add(new OracleParameter("HumanId", Column1));
 
                                 // 쿼리 실행
                                 await command.ExecuteNonQueryAsync();

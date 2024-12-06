@@ -269,6 +269,7 @@
             <!--<lvc:PieChart x:Name="pieChart" Grid.Row="2" LegendLocation="Bottom" Margin="0 0 0 250" MaxHeight="500px" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="18"/>-->
             
             </Grid>
+    
         <!--</StackPanel>-->
         
     </Grid>

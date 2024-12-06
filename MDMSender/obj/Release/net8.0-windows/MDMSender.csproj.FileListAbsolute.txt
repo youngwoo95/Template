@@ -7,8 +7,6 @@ C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\MDMSender.d
 C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\MDMSender.runtimeconfig.json
 C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\MDMSender.dll
 C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\MDMSender.pdb
-C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\MySqlConnector.dll
 C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\kyw\Documents\Template\MDMSender\obj\Release\net8.0-windows\MDMSender.csproj.AssemblyReference.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Release\net8.0-windows\MainWindow.baml
@@ -33,3 +31,8 @@ C:\Users\kyw\Documents\Template\MDMSender\obj\Release\net8.0-windows\refint\MDMS
 C:\Users\kyw\Documents\Template\MDMSender\obj\Release\net8.0-windows\MDMSender.pdb
 C:\Users\kyw\Documents\Template\MDMSender\obj\Release\net8.0-windows\MDMSender.genruntimeconfig.cache
 C:\Users\kyw\Documents\Template\MDMSender\obj\Release\net8.0-windows\ref\MDMSender.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\Oracle.ManagedDataAccess.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\System.DirectoryServices.Protocols.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\runtimes\linux\lib\net8.0\System.DirectoryServices.Protocols.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll
+C:\Users\kyw\Documents\Template\MDMSender\bin\Release\net8.0-windows\runtimes\win\lib\net8.0\System.DirectoryServices.Protocols.dll
