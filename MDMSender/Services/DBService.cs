@@ -82,63 +82,81 @@ namespace MDMSender.Services
         {
             try
             {
+                // DB 연결
                 await using (OracleConnection connection = new OracleConnection(CommonModel.DBConnStr))
                 {
                     await connection.OpenAsync();
 
-                    
-                    OracleTransaction transaction = connection.BeginTransaction();
-                    try
+                    // 트랜잭션 시작
+                    await using (var transaction = connection.BeginTransaction())
                     {
-                        foreach (DataRow row in UpdateDT.Rows)
+                        try
                         {
-                            string? Column1 = Convert.ToString(row["humanid"]);
-                            DateTime GetTime = Convert.ToDateTime(row["GETTIME"]);
-                            string Column2 = GetTime.ToString("yyyyMMddHHmmss");
-
-                            if (String.IsNullOrWhiteSpace(Column1) || String.IsNullOrWhiteSpace(Column2))
-                                return false;
-
-                            // SQL 쿼리
-                            string query = @"UPDATE GUNTAE_EVENT 
-                                     SET SEND_YN = 'Y' 
-                                     WHERE evt_time = TO_DATE(:EvtTime, 'YYYYMMDDHH24MISS') 
-                                     AND human_id = :HumanId";
-
-                            // OracleCommand로 쿼리 실행
-                            await using (OracleCommand command = new OracleCommand(query, connection))
+                            foreach (DataRow row in UpdateDT.Rows)
                             {
-                                // 트랜잭션 설정
-                                command.Transaction = transaction;
+                                // DataTable에서 값 추출
+                                string? Column1 = row["humanid"] as string;
+                                if (!DateTime.TryParse(row["GETTIME"]?.ToString(), out DateTime GetTime))
+                                {
+                                    Console.WriteLine("Invalid GETTIME value in DataRow.");
+                                    return false; // 유효하지 않은 GETTIME
+                                }
 
-                                // 매개변수에 값 바인딩
-                                command.Parameters.Add(new OracleParameter("EvtTime", Column2));
-                                command.Parameters.Add(new OracleParameter("HumanId", Column1));
+                                string Column2 = GetTime.ToString("yyyyMMddHHmmss");
 
-                                // 쿼리 실행
-                                await command.ExecuteNonQueryAsync();
+                                if (string.IsNullOrWhiteSpace(Column1) || string.IsNullOrWhiteSpace(Column2))
+                                {
+                                    Console.WriteLine("Invalid data: Column1 or Column2 is empty.");
+                                    return false; // 유효하지 않은 데이터
+                                }
+
+                                // SQL 쿼리
+                                string query = @"UPDATE GUNTAE_EVENT 
+                                         SET SEND_YN = 'Y' 
+                                         WHERE evt_time = TO_DATE(:EvtTime, 'YYYYMMDDHH24MISS') 
+                                         AND human_id = :HumanId";
+
+                                // OracleCommand로 쿼리 실행
+                                await using (OracleCommand command = new OracleCommand(query, connection))
+                                {
+                                    command.Transaction = transaction;
+
+                                    // 매개변수 바인딩
+                                    command.Parameters.Add(new OracleParameter("EvtTime", Column2));
+                                    command.Parameters.Add(new OracleParameter("HumanId", Column1));
+
+                                    // 쿼리 실행
+                                    int affectedRows = await command.ExecuteNonQueryAsync();
+                                    if (affectedRows == 0)
+                                    {
+                                        Console.WriteLine($"No rows affected for humanid={Column1} and evt_time={Column2}");
+                                    }
+                                }
                             }
-                        }
 
-                        // 모든 업데이트가 성공적으로 완료되면 커밋
-                        await transaction.CommitAsync();
-                        return true;
-                    }
-                    catch
-                    {
-                        // 예외 발생 시 롤백
-                        await transaction.RollbackAsync();
-                        return false;
+                            // 모든 업데이트가 성공적으로 완료되면 커밋
+                            await transaction.CommitAsync();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            // 예외 발생 시 트랜잭션 롤백
+                            await transaction.RollbackAsync();
+                            Console.WriteLine($"Transaction rolled back due to error: {ex.Message}");
+                            await LogService.LogMessage(ex.ToString());
+                            return false;
+                        }
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                // 최상위 예외 처리
+                Console.WriteLine($"Unhandled exception: {ex.Message}");
                 await LogService.LogMessage(ex.ToString());
                 return false;
             }
         }
-
 
 
     }
