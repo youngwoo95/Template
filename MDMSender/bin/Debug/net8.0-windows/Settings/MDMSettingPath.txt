@@ -1,8 +1,0 @@
-{
-  "DBIpAddress": "127.0.0.1",
-  "DBPort": "3306",
-  "DBUser": "root",
-  "DBPW": "rladyddn!!95",
-  "DBName": "ywstudy2",
-  "Destination": "http://127.0.0.1:5171/api/UpdateAPI"
-}

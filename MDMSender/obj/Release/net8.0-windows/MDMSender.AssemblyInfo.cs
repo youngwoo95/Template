@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDMSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+191140e5e6a75fff2598b901e654549099e5cf8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef9a331c02d526fc6f416aa493b6b05a7d7cbda2")]
 [assembly: System.Reflection.AssemblyProductAttribute("MDMSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDMSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
