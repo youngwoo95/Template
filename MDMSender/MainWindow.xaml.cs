@@ -303,7 +303,8 @@ namespace MDMSender
 
                 if (ResultDT is not null)
                 {
-                    await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t 테스트중입니다.\t {ResultDT.Rows.Count}" });
+                    if(ResultDT.Rows.Count == 0)
+                        await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t 전송할 데이터가 없습니다.\t {ResultDT.Rows.Count}" });
                     
                     // 테스트용 주석
                     bool UpdateResult = await StartForm.UpdateTable(ResultDT);
@@ -320,7 +321,7 @@ namespace MDMSender
                             {
                                 foreach (DataRow dr in ResultDT.Rows)
                                 {
-                                    await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t {dr["Title"]}" });
+                                    await MDMFunctions.AddDataAsync(new SenderModel { DateTime = $"[{DateTime.Now.ToString("yyyy.MM.dd HH:mm:ss")}]", Query = $"\t {dr["SABUN"]} 전송완료" });
                                 }
                             });
                         }
