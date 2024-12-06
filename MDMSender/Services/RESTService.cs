@@ -26,14 +26,13 @@ namespace MDMSender.Services
         {
             bool allSuccessful = true; // 전체 작업 성공 여부 플래그
 
-            foreach (DataRow dr in SendDT.Rows)
+            try
             {
-                try
+                foreach (DataRow dr in SendDT.Rows)
                 {
                     // 임시 URL 생성
                     string Url = $"{Settings.Destination}/passing/sync/policy?targetId={dr["SABUN"]}&targetType=U&passingType=SG&passingStatus={dr["BUTTONRESULT"]}";
 
-                    
                     int resultCode = await SendGetRequestAsync(Url);
 
                     // 여기에서 응답 내용을 검사하고 필요한 작업 수행
@@ -46,16 +45,16 @@ namespace MDMSender.Services
                         await LogService.LogMessage($"전송완료 : {Url}");
                     }
                 }
-                catch (HttpRequestException ex)
-                {
-                    await LogService.LogMessage($"HTTP 오류: {ex.Message}");
-                    allSuccessful = false; // 오류 발생 시 전체 성공 여부를 false로 설정
-                }
-                catch (Exception ex)
-                {
-                    await LogService.LogMessage($"일반 오류: {ex.Message}");
-                    allSuccessful = false; // 오류 발생 시 전체 성공 여부를 false로 설정
-                }
+            }
+            catch (HttpRequestException ex)
+            {
+                await LogService.LogMessage($"HTTP 오류: {ex.Message}");
+                allSuccessful = false; // 오류 발생 시 전체 성공 여부를 false로 설정
+            }
+            catch (Exception ex)
+            {
+                await LogService.LogMessage($"일반 오류: {ex.Message}");
+                allSuccessful = false; // 오류 발생 시 전체 성공 여부를 false로 설정
             }
 
             // 모든 행에 대한 요청이 완료된 후 성공 여부
