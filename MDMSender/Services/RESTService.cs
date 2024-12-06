@@ -33,6 +33,7 @@ namespace MDMSender.Services
                     // 임시 URL 생성
                     string Url = $"{Settings.Destination}/passing/sync/policy?targetId={dr["SABUN"]}&targetType=U&passingType=SG&passingStatus={dr["BUTTONRESULT"]}";
 
+                    await LogService.LogMessage($"보내는데이터 : {Url}");
                     int resultCode = await SendGetRequestAsync(Url);
 
                     // 여기에서 응답 내용을 검사하고 필요한 작업 수행
