@@ -95,10 +95,12 @@ namespace MDMSender.Services
                             foreach (DataRow row in UpdateDT.Rows)
                             {
                                 // DataTable에서 값 추출
-                                string? Column1 = row["humanid"] as string;
+                                string? Column1 = row["HUMAN_ID"] as string;
+
+
                                 if (!DateTime.TryParse(row["GETTIME"]?.ToString(), out DateTime GetTime))
                                 {
-                                    Console.WriteLine("Invalid GETTIME value in DataRow.");
+                                    Console.WriteLine("GETTIME이 유효하지 않습니다.");
                                     return false; // 유효하지 않은 GETTIME
                                 }
 
@@ -106,7 +108,7 @@ namespace MDMSender.Services
 
                                 if (string.IsNullOrWhiteSpace(Column1) || string.IsNullOrWhiteSpace(Column2))
                                 {
-                                    Console.WriteLine("Invalid data: Column1 or Column2 is empty.");
+                                    Console.WriteLine("매개변수 Column1과 Column2가 유효하지 않습니다.");
                                     return false; // 유효하지 않은 데이터
                                 }
 
