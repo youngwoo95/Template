@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MDMSender")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef9a331c02d526fc6f416aa493b6b05a7d7cbda2")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42eacb8b41770f60cb100b5b440aeb6c84003e9b")]
+>>>>>>> TempBranch
 [assembly: System.Reflection.AssemblyProductAttribute("MDMSender")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MDMSender")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
