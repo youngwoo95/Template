@@ -7,6 +7,7 @@
       "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\services\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|c:\\users\\kyw\\documents\\template\\mdmsender\\startwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\startwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,22 +42,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|c:\\users\\kyw\\documents\\template\\mdmsender\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\models\\commonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\models\\commonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|c:\\users\\kyw\\documents\\template\\mdmsender\\mdmsender.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\mdmsender.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\startwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\startwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|c:\\users\\kyw\\documents\\template\\mdmsender\\settingwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\settingwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> main
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|c:\\users\\kyw\\documents\\template\\mdmsender\\mdmsender.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\mdmsender.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\settingwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\settingwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|c:\\users\\kyw\\documents\\template\\mdmsender\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\services\\restservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\services\\restservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\models\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\models\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|C:\\Users\\kyw\\Documents\\Template\\mdmsender\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C45D027D-2ABC-4E01-90CC-3E7791555CD3}|MDMSender\\MDMSender.csproj|solutionrelative:mdmsender\\services\\logservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,6 +79,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 8,
           "Children": [
             {
@@ -77,12 +91,26 @@
               "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\StartWindow.xaml.cs",
               "RelativeToolTip": "MDMSender\\StartWindow.xaml.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAiwI4AAABFAAAAAAAAAA==",
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DBService.cs",
+              "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Services\\DBService.cs",
+              "RelativeDocumentMoniker": "MDMSender\\Services\\DBService.cs",
+              "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Services\\DBService.cs",
+              "RelativeToolTip": "MDMSender\\Services\\DBService.cs",
+              "ViewState": "AQIAAI0AAAAAAAAAAAAAAJ4AAAAdAAAA",
+>>>>>>> main
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T07:11:56.67Z",
+              "WhenOpened": "2024-12-07T08:50:43.661Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 12,
               "Title": "MDMSender",
               "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\MDMSender.csproj",
@@ -129,24 +157,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+=======
+              "DocumentIndex": 1,
+              "Title": "CommonModel.cs",
+              "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Models\\CommonModel.cs",
+              "RelativeDocumentMoniker": "MDMSender\\Models\\CommonModel.cs",
+              "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Models\\CommonModel.cs",
+              "RelativeToolTip": "MDMSender\\Models\\CommonModel.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T08:50:41.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StartWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\StartWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MDMSender\\StartWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\StartWindow.xaml.cs",
+              "RelativeToolTip": "MDMSender\\StartWindow.xaml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAqwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T13:08:50.596Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Models\\Settings.cs",
+              "RelativeDocumentMoniker": "MDMSender\\Models\\Settings.cs",
+              "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Models\\Settings.cs",
+              "RelativeToolTip": "MDMSender\\Models\\Settings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T13:08:43.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+>>>>>>> main
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MDMSender\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\MainWindow.xaml.cs",
               "RelativeToolTip": "MDMSender\\MainWindow.xaml.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAACQBAAAAAAAAAADwvzQBAABDAAAAAAAAAA==",
+=======
+              "ViewState": "AQIAAPQAAAAAAAAAAAAuwAAAAAAAAAAA",
+>>>>>>> main
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T15:30:50.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T13:05:33.47Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
+=======
+              "DocumentIndex": 5,
+>>>>>>> main
               "Title": "RESTService.cs",
               "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Services\\RESTService.cs",
               "RelativeDocumentMoniker": "MDMSender\\Services\\RESTService.cs",
               "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Services\\RESTService.cs",
               "RelativeToolTip": "MDMSender\\Services\\RESTService.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAA8AAAAAAAAAAAAmwCMAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T15:30:14.715Z",
@@ -228,15 +303,35 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+=======
+              "ViewState": "AQIAAAYAAAAAAAAAAADwvzoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T13:04:42.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+>>>>>>> main
               "Title": "SettingWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\SettingWindow.xaml.cs",
               "RelativeDocumentMoniker": "MDMSender\\SettingWindow.xaml.cs",
               "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\SettingWindow.xaml.cs",
               "RelativeToolTip": "MDMSender\\SettingWindow.xaml.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAADMAAAAAAAAAAAAQwCMAAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T07:54:32.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T13:04:05.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LogService.cs",
+              "DocumentMoniker": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Services\\LogService.cs",
+              "RelativeDocumentMoniker": "MDMSender\\Services\\LogService.cs",
+              "ToolTip": "C:\\Users\\kyw\\Documents\\Template\\MDMSender\\Services\\LogService.cs",
+              "RelativeToolTip": "MDMSender\\Services\\LogService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T13:04:02.919Z"
             }
           ]
         }

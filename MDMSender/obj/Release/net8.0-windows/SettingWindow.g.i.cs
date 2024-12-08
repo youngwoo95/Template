@@ -118,7 +118,7 @@ namespace MDMSender {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MDMSender;component/settingwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MDMSender;V1.0.0.0;component/settingwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\SettingWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

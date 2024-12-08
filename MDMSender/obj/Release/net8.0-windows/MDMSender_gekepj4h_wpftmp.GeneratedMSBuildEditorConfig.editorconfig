@@ -13,15 +13,11 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-<<<<<<< HEAD
 <<<<<<< HEAD:MDMSender/obj/Release/net8.0-windows/MDMSender_k2gnyraf_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
 build_property.RootNamespace = MDMSender_k2gnyraf_wpftmp
 =======
 build_property.RootNamespace = MDMSender_gekepj4h_wpftmp
 >>>>>>> main:MDMSender/obj/Release/net8.0-windows/MDMSender_gekepj4h_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
-=======
-build_property.RootNamespace = MDMSender_k2gnyraf_wpftmp
->>>>>>> main
 build_property.ProjectDir = C:\Users\kyw\Documents\Template\MDMSender\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

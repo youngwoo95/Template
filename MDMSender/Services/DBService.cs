@@ -9,8 +9,6 @@ namespace MDMSender.Services
     {
         public DBService()
         {
-            // DB 연결문자열
-            //CommonModel.DBConnStr = $"Server={Settings.DBIpAddress};Port={Settings.DBPort};Database={Settings.DBName};User Id={Settings.DBUser};Password={Settings.DBPW};Connect Timeout=30;SslMode=None;";
         }
 
         /// <summary>
