@@ -61,7 +61,25 @@ namespace MDMSender.Services
             return allSuccessful;
         }
 
+        public async Task<int> SendGetRequestAsync(string url)
+        {
+            using var request = new HttpRequestMessage(HttpMethod.Get, url);
+            try
+            {
+                using HttpResponseMessage response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+                response.EnsureSuccessStatusCode(); // 상태 코드 확인
+                string? ContentResult = await response.Content.ReadAsStringAsync();
+                return (int)response.StatusCode;
+            }
+            catch(Exception ex)
+            {
+                await LogService.LogMessage(ex.ToString());
+                return 500;
+            }
+        }
 
+        #region 명시적 해제 추가전
+        /*
         private async Task<int> SendGetRequestAsync(string url)
         {
             try
@@ -79,6 +97,8 @@ namespace MDMSender.Services
                 return 500;
             }
         }
+        */
+        #endregion
 
 
 
